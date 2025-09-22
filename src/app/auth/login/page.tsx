@@ -1,4 +1,5 @@
 import { LoginForm } from "@/components/login-form";
+import Link from "next/link";
 import React from "react";
 
 export default function Page() {
@@ -12,6 +13,11 @@ export default function Page() {
 
       <div className="mt-8">
         <LoginForm />
+
+        <p>
+          Don't have an account?
+          <Link href="/auth/register">Register</Link>
+        </p>
       </div>
     </div>
   );
