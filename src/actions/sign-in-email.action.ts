@@ -1,6 +1,7 @@
 "use server";
 
 import { auth } from "@/lib/auth";
+import { APIError } from "better-auth/api";
 import { parseSetCookieHeader } from "better-auth/cookies";
 import { cookies, headers } from "next/headers";
 
@@ -50,9 +51,11 @@ export async function signInEmailAction(formData: FormData) {
 
     return { error: null };
   } catch (error) {
-    if (error instanceof Error) {
-      return { error: "Oops! Something went wrong while logging in" };
+    if (error instanceof APIError) {
+      console.log(error);
+      return { error: error.message };
     }
+    console.log(error);
     return { error: "Internal Server Error" };
   }
 }
