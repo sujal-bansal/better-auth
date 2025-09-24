@@ -18,8 +18,12 @@ export default async function Page() {
           Profile
         </h1>
       </div>
-      <SignOutButton />
-      <pre className="text-sm overflow-clip">
+
+      <div className="mt-8 flex justify-center">
+        <SignOutButton />
+      </div>
+
+      <pre className="mt-6 text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded overflow-x-auto">
         {JSON.stringify(session, null, 2)}
       </pre>
     </div>

@@ -39,6 +39,11 @@ export const auth = betterAuth({
       }
     }),
   },
+  user: {
+    additionalFields: {
+      role: { type: ["USER", "ADMIN"], input: false },
+    },
+  },
   advanced: {
     database: {
       generateId: false,

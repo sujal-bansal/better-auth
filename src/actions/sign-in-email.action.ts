@@ -21,6 +21,9 @@ export async function signInEmailAction(formData: FormData) {
     });
 
     //Manual Cookie Setting
+    //const res = await auth.api.signInEmail({
+    //   await headers(),
+    // body  : {email , password}})
 
     // const setCookieHeader = res.headers.get("set-cookie");
     // console.log(setCookieHeader);

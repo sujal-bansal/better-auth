@@ -15,9 +15,15 @@ export default function Page() {
 
       <div className="mt-8">
         <RegisterForm />
-        <p>
+
+        <p className="mt-4 text-sm text-gray-700 dark:text-gray-300 text-center">
           Already have an account?
-          <Link href="/auth/login">Login</Link>
+          <Link
+            href="/auth/login"
+            className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 ml-1"
+          >
+            Login
+          </Link>
         </p>
       </div>
     </div>
