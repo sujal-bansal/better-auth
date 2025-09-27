@@ -1,7 +1,9 @@
 import { ReturnButton } from "@/components/return-button";
 import { SignOutButton } from "@/components/sign-out-button";
+import { Button } from "@/components/ui/button";
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 import React from "react";
 
@@ -20,7 +22,14 @@ export default async function Page() {
       </div>
 
       <div className="mt-8 flex justify-center">
-        <SignOutButton />
+        <div className="flex items-center gap-2">
+          {session.user.role !== "ADMIN" && (
+            <Button size="sm" asChild>
+              <Link href="/admin/dashboard">Admin Dashboard</Link>
+            </Button>
+          )}
+          <SignOutButton />
+        </div>
       </div>
 
       <pre className="mt-6 text-sm bg-gray-100 dark:bg-gray-800 p-4 rounded overflow-x-auto">
